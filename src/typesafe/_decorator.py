@@ -49,7 +49,4 @@ def typesafe(func):
         checkargs([('return', res)])
         return res
 
-    if __debug__:
-        return wrap
-    else:
-        return func
+    return wrap if __debug__ else func
